@@ -5,7 +5,6 @@ import { RelacionInvalidaException } from '../exceptions/RelacionInvalidaExcepti
 
 export class ValidadorRelacion implements IValidadorRelacion {
   validar(relacion: RelacionFamiliar, arbol: ArbolGenealogico): boolean {
-    // Verificar que ambas personas existan
     const origen = arbol.obtenerPersona(relacion.personaOrigenId);
     const destino = arbol.obtenerPersona(relacion.personaDestinoId);
 
@@ -16,18 +15,14 @@ export class ValidadorRelacion implements IValidadorRelacion {
       throw new RelacionInvalidaException(`Persona destino no existe: ${relacion.personaDestinoId}`);
     }
 
-    // No puede ser relacion consigo mismo
     if (relacion.personaOrigenId === relacion.personaDestinoId) {
       throw new RelacionInvalidaException('Una persona no puede tener relación consigo misma');
     }
 
-    // Verificar que no cree ciclos (solo para PADRE_DE y MADRE_DE)
     if (relacion.tipo === 'PADRE_DE' || relacion.tipo === 'MADRE_DE') {
       if (this._existeCiclo(relacion.personaDestinoId, relacion.personaOrigenId, arbol)) {
         throw new RelacionInvalidaException('La relación crearía un ciclo en el árbol genealógico');
       }
-
-      // Verificar diferencia de edad (padre debe ser al menos 12 años mayor)
       const edadOrigen = origen.obtenerEdad();
       const edadDestino = destino.obtenerEdad();
       
@@ -41,7 +36,6 @@ export class ValidadorRelacion implements IValidadorRelacion {
       }
     }
 
-    // Verificar que no haya relaciones duplicadas
     const existentes = arbol.obtenerRelacionesDePersona(relacion.personaOrigenId);
     const duplicada = existentes.find(r => 
       r.personaDestinoId === relacion.personaDestinoId && 
@@ -59,7 +53,6 @@ export class ValidadorRelacion implements IValidadorRelacion {
 
     const relaciones = arbol.obtenerRelacionesDePersona(desdeId);
     for (const r of relaciones) {
-      // Si desde es hijo de alguien, subimos
       if (r.personaDestinoId === desdeId && (r.tipo === 'PADRE_DE' || r.tipo === 'MADRE_DE')) {
         if (this._existeCiclo(r.personaOrigenId, buscandoId, arbol)) return true;
       }

@@ -41,17 +41,14 @@ export class ValidadorCronologico implements IValidadorCronologico {
       if (evento instanceof Defuncion) fechaDefuncion = evento.fecha;
     }
 
-    // Nacimiento debe existir y ser antes de matrimonio
     if (fechaMatrimonio && fechaNacimiento) {
       if (fechaMatrimonio <= fechaNacimiento) return false;
     }
 
-    // Matrimonio debe ser antes de defunción
     if (fechaDefuncion && fechaMatrimonio) {
       if (fechaDefuncion <= fechaMatrimonio) return false;
     }
 
-    // Nacimiento debe ser antes de defunción
     if (fechaDefuncion && fechaNacimiento) {
       if (fechaDefuncion <= fechaNacimiento) return false;
     }
