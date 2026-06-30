@@ -5,7 +5,6 @@ import { CrearEvento } from '../../application/eventos/CrearEvento';
 import { ActualizarEvento } from '../../application/eventos/ActualizarEvento';
 import { EliminarEvento } from '../../application/eventos/EliminarEvento';
 import { ListarEventos } from '../../application/eventos/ListarEventos';
-import { ValidarCronologia } from '../../application/eventos/ValidarCronologia';
 import { ExportarEventos } from '../../application/eventos/ExportarEventos';
 import { ExportarGEDCOM } from '../../application/eventos/ExportarGEDCOM';
 import { FugaCronologicaException } from '../../domain/exceptions/FugaCronologicaException';
@@ -100,17 +99,6 @@ export class EventosController {
         res.status(404).json({ error: err.message });
         return;
       }
-      res.status(500).json({ error: 'Error interno' });
-    }
-  }
-
-  static async validar(_req: Request, res: Response): Promise<void> {
-    try {
-      const arbol = ArbolSingleton.obtenerInstancia();
-      const casoUso = new ValidarCronologia(EventosController._procesador, arbol);
-      const resultado = await casoUso.ejecutar();
-      res.status(200).json({ data: resultado });
-    } catch (err) {
       res.status(500).json({ error: 'Error interno' });
     }
   }

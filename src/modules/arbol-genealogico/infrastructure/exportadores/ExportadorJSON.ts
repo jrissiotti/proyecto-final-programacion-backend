@@ -1,19 +1,28 @@
 import { IExportador } from '../../domain/interfaces/IExportador';
-import { EventoBase } from '../../domain/entities/EventoBase';
 
-export class ExportadorJSON implements IExportador<EventoBase> {
+/**
+ * Exportador genérico que convierte cualquier objeto que implemente `toJSON()`
+ * en una colección JSON estructurada. Se usa principalmente para exportar
+ * personas completas, pero también puede servir para cualquier otro tipo.
+ */
+export class ExportadorJSON<T extends { toJSON(): any }> implements IExportador<T> {
   readonly extension: string = 'json';
   readonly mimeType: string = 'application/json';
 
-  exportar(datos: EventoBase[]): string {
-    const featureCollection = {
+  /**
+   * Convierte el arreglo de datos en un JSON con metadatos básicos.
+   * Se mantiene la estructura anterior (FeatureCollection) para compatibilidad
+   * con los exportadores existentes.
+   */
+  exportar(datos: T[]): string {
+    const collection = {
       type: 'FeatureCollection',
       metadata: {
-        totalEventos: datos.length,
+        totalItems: datos.length,
         fechaGeneracion: new Date().toISOString()
       },
-      features: datos.map(e => e.toJSON())
+      features: datos.map(d => d.toJSON())
     };
-    return JSON.stringify(featureCollection, null, 2);
+    return JSON.stringify(collection, null, 2);
   }
 }
