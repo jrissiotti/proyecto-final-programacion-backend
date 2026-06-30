@@ -1,9 +1,9 @@
-import { Persona } from '../../src/domain/entities/Persona';
-import { Nacimiento } from '../../src/domain/entities/Nacimiento';
-import { Defuncion } from '../../src/domain/entities/Defuncion';
-import { Matrimonio } from '../../src/domain/entities/Matrimonio';
-import { Migracion } from '../../src/domain/entities/Migracion';
-import { Ubicacion } from '../../src/domain/entities/Ubicacion';
+import { Persona } from '../../src/modules/arbol-genealogico/domain/entities/Persona';
+import { Nacimiento } from '../../src/modules/arbol-genealogico/domain/entities/Nacimiento';
+import { Defuncion } from '../../src/modules/arbol-genealogico/domain/entities/Defuncion';
+import { Matrimonio } from '../../src/modules/arbol-genealogico/domain/entities/Matrimonio';
+import { Migracion } from '../../src/modules/arbol-genealogico/domain/entities/Migracion';
+import { Ubicacion } from '../../src/modules/arbol-genealogico/domain/entities/Ubicacion';
 
 describe('Persona', () => {
   let persona: Persona;

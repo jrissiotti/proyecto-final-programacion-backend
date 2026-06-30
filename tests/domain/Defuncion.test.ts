@@ -1,6 +1,6 @@
-import { Defuncion } from '../../src/domain/entities/Defuncion';
-import { Ubicacion } from '../../src/domain/entities/Ubicacion';
-import { FugaCronologicaException } from '../../src/exceptions/FugaCronologicaException';
+import { Defuncion } from '../../src/modules/arbol-genealogico/domain/entities/Defuncion';
+import { Ubicacion } from '../../src/modules/arbol-genealogico/domain/entities/Ubicacion';
+import { FugaCronologicaException } from '../../src/modules/arbol-genealogico/domain/exceptions/FugaCronologicaException';
 
 describe('Defuncion', () => {
   test('debe crear con datos validos', () => {

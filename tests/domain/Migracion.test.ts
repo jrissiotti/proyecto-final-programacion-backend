@@ -1,6 +1,6 @@
-import { Migracion } from '../../src/domain/entities/Migracion';
-import { Ubicacion } from '../../src/domain/entities/Ubicacion';
-import { FugaCronologicaException } from '../../src/exceptions/FugaCronologicaException';
+import { Migracion } from '../../src/modules/arbol-genealogico/domain/entities/Migracion';
+import { Ubicacion } from '../../src/modules/arbol-genealogico/domain/entities/Ubicacion';
+import { FugaCronologicaException } from '../../src/modules/arbol-genealogico/domain/exceptions/FugaCronologicaException';
 
 describe('Migracion', () => {
   test('debe crear con datos validos', () => {

@@ -1,5 +1,5 @@
-import { RelacionFamiliar } from '../../src/domain/entities/RelacionFamiliar';
-import { RelacionInvalidaException } from '../../src/exceptions/RelacionInvalidaException';
+import { RelacionFamiliar } from '../../src/modules/arbol-genealogico/domain/entities/RelacionFamiliar';
+import { RelacionInvalidaException } from '../../src/modules/arbol-genealogico/domain/exceptions/RelacionInvalidaException';
 
 describe('RelacionFamiliar', () => {
   test('debe crear relacion valida', () => {

@@ -2,7 +2,7 @@ import { Worker } from 'worker_threads';
 import path from 'path';
 
 describe('Worker', () => {
-  const workerPath = path.resolve(__dirname, '../../src/workers/worker.ts');
+  const workerPath = path.resolve(__dirname, '../../src/modules/arbol-genealogico/infrastructure/workers/worker.ts');
 
   test('debe validar consistencia con arbol valido', (done) => {
     const worker = new Worker(workerPath, {

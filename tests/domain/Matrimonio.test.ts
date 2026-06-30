@@ -1,6 +1,6 @@
-import { Matrimonio } from '../../src/domain/entities/Matrimonio';
-import { Ubicacion } from '../../src/domain/entities/Ubicacion';
-import { FugaCronologicaException } from '../../src/exceptions/FugaCronologicaException';
+import { Matrimonio } from '../../src/modules/arbol-genealogico/domain/entities/Matrimonio';
+import { Ubicacion } from '../../src/modules/arbol-genealogico/domain/entities/Ubicacion';
+import { FugaCronologicaException } from '../../src/modules/arbol-genealogico/domain/exceptions/FugaCronologicaException';
 
 describe('Matrimonio', () => {
   test('debe crear con datos validos', () => {

@@ -1,6 +1,6 @@
-import { EventoBase } from '../../src/domain/entities/EventoBase';
-import { Nacimiento } from '../../src/domain/entities/Nacimiento';
-import { Ubicacion } from '../../src/domain/entities/Ubicacion';
+import { EventoBase } from '../../src/modules/arbol-genealogico/domain/entities/EventoBase';
+import { Nacimiento } from '../../src/modules/arbol-genealogico/domain/entities/Nacimiento';
+import { Ubicacion } from '../../src/modules/arbol-genealogico/domain/entities/Ubicacion';
 
 describe('EventoBase', () => {
   test('debe ser una clase abstracta', () => {

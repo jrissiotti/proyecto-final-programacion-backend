@@ -1,11 +1,11 @@
-import { ArbolGenealogico } from '../../src/services/ArbolGenealogico';
-import { ValidadorCronologico } from '../../src/services/ValidadorCronologico';
-import { ValidadorRelacion } from '../../src/services/ValidadorRelacion';
-import { Persona } from '../../src/domain/entities/Persona';
-import { RelacionFamiliar } from '../../src/domain/entities/RelacionFamiliar';
-import { Nacimiento } from '../../src/domain/entities/Nacimiento';
-import { Ubicacion } from '../../src/domain/entities/Ubicacion';
-import { ExportadorGEDCOM } from '../../src/infrastructure/exportadores/ExportadorGEDCOM';
+import { ArbolGenealogico } from '../../src/modules/arbol-genealogico/domain/services/ArbolGenealogico';
+import { ValidadorCronologico } from '../../src/modules/arbol-genealogico/domain/services/ValidadorCronologico';
+import { ValidadorRelacion } from '../../src/modules/arbol-genealogico/domain/services/ValidadorRelacion';
+import { Persona } from '../../src/modules/arbol-genealogico/domain/entities/Persona';
+import { RelacionFamiliar } from '../../src/modules/arbol-genealogico/domain/entities/RelacionFamiliar';
+import { Nacimiento } from '../../src/modules/arbol-genealogico/domain/entities/Nacimiento';
+import { Ubicacion } from '../../src/modules/arbol-genealogico/domain/entities/Ubicacion';
+import { ExportadorGEDCOM } from '../../src/modules/arbol-genealogico/infrastructure/exportadores/ExportadorGEDCOM';
 
 describe('ArbolGenealogico', () => {
   let arbol: ArbolGenealogico;

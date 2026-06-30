@@ -1,4 +1,4 @@
-import { PilaHistorial } from '../../src/generics/PilaHistorial';
+import { PilaHistorial } from '../../src/modules/arbol-genealogico/domain/generics/PilaHistorial';
 
 describe('PilaHistorial', () => {
   test('debe lanzar error con limite 0', () => {

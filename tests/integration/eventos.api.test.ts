@@ -1,8 +1,8 @@
 // tests/integration/eventos.api.test.ts
 import request from 'supertest';
 import express from 'express';
-import personasRoutes from '../../src/infrastructure/routes/personas.routes';
-import eventosRoutes from '../../src/infrastructure/routes/eventos.routes';
+import personasRoutes from '../../src/modules/arbol-genealogico/infrastructure/routes/personas.routes';
+import eventosRoutes from '../../src/modules/arbol-genealogico/infrastructure/routes/eventos.routes';
 
 const app = express();
 app.use(express.json());

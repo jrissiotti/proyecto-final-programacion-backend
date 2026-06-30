@@ -1,4 +1,4 @@
-import { Ubicacion } from '../../src/domain/entities/Ubicacion';
+import { Ubicacion } from '../../src/modules/arbol-genealogico/domain/entities/Ubicacion';
 
 describe('Ubicacion', () => {
   test('debe crear ubicacion con datos correctos', () => {

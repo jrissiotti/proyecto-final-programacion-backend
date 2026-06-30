@@ -6,7 +6,7 @@ module.exports = {
   collectCoverageFrom: [
     'src/**/*.ts',
     '!src/index.ts',
-    '!src/infrastructure/**/*.ts'
+    '!src/modules/arbol-genealogico/infrastructure/**/*.ts'
   ],
   coverageThreshold: {
     global: {
@@ -16,5 +16,5 @@ module.exports = {
       statements: 70
     }
   },
-  setupFiles: ['<rootDir>/tests/setup.ts']
+  setupFilesAfterEnv: ['<rootDir>/tests/setup.ts']
 };

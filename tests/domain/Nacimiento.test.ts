@@ -1,6 +1,6 @@
-import { Nacimiento } from '../../src/domain/entities/Nacimiento';
-import { Ubicacion } from '../../src/domain/entities/Ubicacion';
-import { FugaCronologicaException } from '../../src/exceptions/FugaCronologicaException';
+import { Nacimiento } from '../../src/modules/arbol-genealogico/domain/entities/Nacimiento';
+import { Ubicacion } from '../../src/modules/arbol-genealogico/domain/entities/Ubicacion';
+import { FugaCronologicaException } from '../../src/modules/arbol-genealogico/domain/exceptions/FugaCronologicaException';
 
 describe('Nacimiento', () => {
   test('debe crear con datos validos', () => {
