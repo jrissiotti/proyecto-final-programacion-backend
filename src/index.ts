@@ -27,10 +27,22 @@ async function startServer() {
     // Inicializar el singleton con el repositorio JSON
     await ArbolSingleton.inicializar(new JsonFileArbolRepository());
     
+  try {
     app.listen(PORT, () => {
       console.log(`sge-core-api corriendo en http://localhost:${PORT}`);
       console.log(`Swagger UI en http://localhost:${PORT}/api-docs`);
     });
+  } catch (err) {
+    if ((err as any).code === 'EADDRINUSE') {
+      const fallbackPort = 3001;
+      app.listen(fallbackPort, () => {
+        console.log(`Port 3000 in use, server started on fallback port ${fallbackPort}`);
+        console.log(`Swagger UI en http://localhost:${fallbackPort}/api-docs`);
+      });
+    } else {
+      throw err;
+    }
+  }
   } catch (error) {
     console.error('Error al inicializar la base de datos:', error);
     process.exit(1);

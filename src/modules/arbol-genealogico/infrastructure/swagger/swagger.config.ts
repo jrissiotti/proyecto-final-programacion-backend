@@ -27,7 +27,7 @@ const options: swaggerJsdoc.Options = {
       { name: 'Historial', description: 'Historial de cambios del sistema' },
     ],
   },
-  apis: ['./src/infrastructure/swagger/*.docs.ts'], // Archivos con anotaciones
+  apis: ['./src/modules/*/infrastructure/swagger/*.docs.ts'], // Archivos con anotaciones
 };
 
 const swaggerSpec = swaggerJsdoc(options);
